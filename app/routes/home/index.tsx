@@ -3,6 +3,10 @@ import type { Route } from "./+types";
 import Section from "~/components/Section";
 import type { Language } from "~/models/language";
 import LanguageCard from "~/components/LanguageCard";
+import { projects } from "~/models/project";
+import ProjectCard from "~/components/ProjectCard";
+import { services } from "~/models/service";
+import ServiceCard from "~/components/ServiceCard";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Gabriel Bento | Home" },
@@ -50,14 +54,27 @@ const HomePage = () => {
     <section>
       <Header />
       <Section title="Languages" jpnText="私の言語">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8">
           {languages.map((l) => (
-            <LanguageCard language={l} />
+            <LanguageCard key={l.name} language={l} />
           ))}
         </div>
       </Section>
+      <Section title="Services" jpnText="サービス">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {
+            services.map((s) => (
+              <ServiceCard key={s.title} service={s} />
+            ))
+          }
+        </div>
+      </Section>
       <Section title="Projects" jpnText="プロジェクト">
-        Children
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((p) => (
+            <ProjectCard key={p.id} project={p} />
+          ))}
+        </div>
       </Section>
     </section>
   );
