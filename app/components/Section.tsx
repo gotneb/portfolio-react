@@ -11,7 +11,7 @@ const Section = ({ title, jpnText, children }: SectionProps) => {
     <section className="mb-8">
       <div className="flex items-center gap-4">
         <h2 className="text-2xl font-bold">{title}</h2>
-        <span className="text-2xl bg-blue-600 px-6 py-1 rounded-full shadow-soft-blue">
+        <span className="font-japanese text-2xl bg-indigo-500 text-surface px-6 py-1 rounded-full shadow-soft">
           {jpnText}
         </span>
       </div>
