@@ -1,32 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 @import "tailwindcss";
 
+
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-japanese: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
 
   /* 🎨 Custom Palette */
-  --color-charcoal-900: #0F0F0F;  /* deep background */
-  --color-charcoal-800: #1A1A1A;  /* lighter background tone */
-  --color-charcoal-700: #1F1F1F;  /* cards/containers */
-  --color-charcoal-600: #292929;  /* shadows/borders */
+  /* --color-background: #ffffff; */      /* main background */
+  /* --color-surface: #f5f5f5;   */       /* cards/containers */
+  /* --color-border: #d4d4d4;     */     /* borders / shadows */
 
-  --color-mist-100: #EDEDED;      /* main text (soft white) */
-  --color-mist-200: #B5B5B5;      /* secondary text (muted gray) */
+  /* --color-surface-hover: #e0e0e0;   */ /* Card hover / background highlight */
 
-  --color-maple-500: #E6392E;     /* primary accent (buttons, highlights) */
-  --color-maple-400: #FF5A4D;     /* softer red */
+  /* --color-text-primary: #1a1a1a;  */  /* main text */
+  /* --color-text-secondary: #4b4b4b; */  /* secondary text */
 
-  --color-moon-300: #F2B880;      /* moonlight beige */
-  --color-moon-400: #D9A566;      /* golden tone */
+  /* --color-maple-500: #E6392E;  */      /* primary accent (buttons, highlights) */
+  /* --color-maple-400: #FF5A4D;  */      /* softer red */
 
-  --shadow-soft-blue: 2px 2px 10px rgba(59, 130, 246, 1.0); /* custom soft blue shadow */
+  /* --color-moon-300: #F2B880;  */       /* moonlight beige */
+  /* --color-moon-400: #D9A566;   */     /* golden tone */
+  /* --color-maple-600: #C5302C;  */     /* Darker hover for buttons */
+  
+  --color-light-100: #fafafa;
+
+  /* Backgrounds & Surfaces */
+  --color-background: #f8f9fc;   /* Main page background */
+  --color-surface: #eef1fb;      /* Cards / containers */
+  --color-surface-hover: #a5b4fc; /* Card hover / highlight */
+  --color-border: #c5cbe6;       /* Borders / dividers */
+
+  /* Text */
+  --color-text-primary: #1e1f3f;   /* Main text */
+  --color-text-secondary: #4b4d7c; /* Secondary text */
+  --color-text-link: #4f46e5;      /* Links / interactive text */
+  --color-text-link-hover: #3730a3; /* Link hover */
+
+  /* Buttons / Highlights */
+  --color-indigo-500: #4f46e5;    /* Primary button / highlight */
+  --color-indigo-400: #6366f1;    /* Softer button / accent */
+  --color-indigo-600: #3730a3;    /* Hover / active button */
+  --color-indigo-300: #a5b4fc;    /* Card hover / subtle highlight */
+
+  --shadow-soft: 0 4px 12px rgba(79, 70, 229, 0.8);
 }
 
 html,
 body {
-  @apply bg-charcoal-900 text-mist-100 dark:bg-charcoal-900;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+  @apply bg-background text-text-primary;
 }
