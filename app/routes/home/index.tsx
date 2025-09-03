@@ -54,22 +54,22 @@ const HomePage = () => {
 
   return (
     <section>
-      <Header />
-      <Section title="Languages" jpnText="話せる言語">
+      <Header id="about" />
+      <Section id="languages" title="Languages" jpnText="話せる言語">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {languages.map((l) => (
             <LanguageCard key={l.name} language={l} />
           ))}
         </div>
       </Section>
-      <Section title="Services" jpnText="サービス">
+      <Section id="services" title="Services" jpnText="サービス">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((s) => (
             <ServiceCard key={s.title} service={s} />
           ))}
         </div>
       </Section>
-      <Section title="Experience" jpnText="経歴">
+      <Section id="experience" title="Experience" jpnText="経歴">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {jobs
             .slice() // make a shallow copy so the original array isn't mutated
@@ -88,7 +88,7 @@ const HomePage = () => {
             ))}
         </div>
       </Section>
-      <Section title="Projects" jpnText="プロジェクト">
+      <Section id="projects" title="Projects" jpnText="プロジェクト">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p) => (
             <ProjectCard key={p.id} project={p} />

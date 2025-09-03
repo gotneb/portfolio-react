@@ -2,7 +2,11 @@ import { FaDownload } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
-const Header = () => {
+type HeaderProps = {
+  id: string;
+};
+
+const Header = ({ id }: HeaderProps) => {
   const buttons = [
     {
       text: "Download CV",
@@ -22,7 +26,7 @@ const Header = () => {
   ];
 
   return (
-    <div>
+    <div id={id}>
       <div className="flex flex-row flex-wrap items-start gap-8">
         {/* Left Image */}
         <div className="flex-shrink-0">
@@ -45,11 +49,13 @@ const Header = () => {
             </h2>
           </div>
           <p className="text-lg first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:leading-none first-letter:float-left">
-            This site is a demonstration of my skills and a celebration of my
-            hobbies. From computer hardware, to aerial photography, I tend to
-            showcase a little bit of everything. I see it as an open space for
-            me to quickly express myself and share my content without relying on
-            third parties.
+            This portfolio showcases my work as a frontend developer, building
+            responsive and interactive web and mobile applications. I specialize
+            in modern technologies such as React.js, Tailwind CSS, Node.js, and
+            Kotlin for Android, crafting clean interfaces and seamless user
+            experiences. From web apps to mobile solutions, it highlights my
+            skills in frontend development, modern design, and engaging user
+            interactions. design.
           </p>
         </div>
       </div>
