@@ -10,6 +10,8 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import NavBar from "./components/NavBar";
+import { LanguageProvider } from "./contexts/LanguageContext";
+import LanguageAwareLayout from "./components/LanguageAwareLayout";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -34,14 +36,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <NavBar />
-        <main className="m-auto p-4 md:p-12 max-w-7xl">{children}</main>
+        <LanguageProvider>
+          <LanguageAwareLayout>
+            <NavBar />
+            <main className="m-auto p-4 md:p-12 max-w-7xl">{children}</main>
+          </LanguageAwareLayout>
+        </LanguageProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
 }
+
+
 
 export default function App() {
   return <Outlet />;

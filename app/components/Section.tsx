@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useLanguage } from "~/contexts/LanguageContext";
 
 type SectionProps = {
   id: string;
@@ -8,6 +9,8 @@ type SectionProps = {
 };
 
 const Section = ({ id, title, jpnText, children }: SectionProps) => {
+  const { t } = useLanguage();
+  
   return (
     <section id={id} className="scroll-mt-20 mb-8">
       <div className="flex items-center gap-4">

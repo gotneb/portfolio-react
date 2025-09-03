@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { PiCoffee } from "react-icons/pi";
 import { IoIosMenu } from "react-icons/io";
 import { CgClose } from "react-icons/cg";
+import { useLanguage } from "~/contexts/LanguageContext";
 
 const NavBar = () => {
-  const [language, setLanguage] = useState<"pt" | "en">("en");
+  const { language, setLanguage, t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const base = "text-sm font-medium cursor-pointer hover:underline";
@@ -17,16 +18,16 @@ const NavBar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
           <a href="#about" className={base}>
-            About
+            {t.nav.about}
           </a>
           <a href="#services" className={base}>
-            Services
+            {t.nav.services}
           </a>
           <a href="#experience" className={base}>
-            Experience
+            {t.nav.experience}
           </a>
           <a href="#projects" className={base}>
-            Projects
+            {t.nav.projects}
           </a>
         </div>
 
@@ -64,28 +65,28 @@ const NavBar = () => {
       {menuOpen && (
         <div className="md:hidden bg-white shadow-md flex flex-col items-start px-4 py-2 gap-2">
           <a href="#about" className={base} onClick={() => setMenuOpen(false)}>
-            About
+            {t.nav.about}
           </a>
           <a
             href="#services"
             className={base}
             onClick={() => setMenuOpen(false)}
           >
-            Services
+            {t.nav.services}
           </a>
           <a
             href="#experience"
             className={base}
             onClick={() => setMenuOpen(false)}
           >
-            Experience
+            {t.nav.experience}
           </a>
           <a
             href="#projects"
             className={base}
             onClick={() => setMenuOpen(false)}
           >
-            Projects
+            {t.nav.projects}
           </a>
         </div>
       )}

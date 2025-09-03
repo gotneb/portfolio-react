@@ -9,6 +9,8 @@ import { services } from "~/models/service";
 import ServiceCard from "~/components/ServiceCard";
 import { jobs } from "~/models/job";
 import JobCard from "~/components/JobCard";
+import { useLanguage } from "~/contexts/LanguageContext";
+
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Gabriel Bento | Home" },
@@ -17,59 +19,68 @@ export function meta({}: Route.MetaArgs) {
 }
 
 const HomePage = () => {
+  const { t } = useLanguage();
+  
   const languages: Language[] = [
     {
-      name: "Português",
+      name: t.languages.portuguese.name,
       image: "/images/brazil.png",
-      level: "Fluent",
-      welcomeMessage: "Bem-vindo(a)!",
-      message:
-        "Sou profundamente apaixonado por aprender novos idiomas. Gosto muito de entender a cultura e estudar sobre línguas. Estou ancioso para continuar aprendendo e evoluindo nessa jornada.",
+      level: t.languages.portuguese.level,
+      welcomeMessage: t.languages.portuguese.welcomeMessage,
+      message: t.languages.portuguese.message,
     },
     {
-      name: "English",
+      name: t.languages.english.name,
       image: "/images/usa.png",
-      level: "Fluent",
-      welcomeMessage: "What's up!",
-      message:
-        "I'm depply passionate about learning languages. The joy of being able to express and communicate in another languages is a very rewardinging experiences. I'm eager to continue learning and growing in this journey.",
+      level: t.languages.english.level,
+      welcomeMessage: t.languages.english.welcomeMessage,
+      message: t.languages.english.message,
     },
     {
-      name: "日本語",
+      name: t.languages.japanese.name,
       image: "/images/japan.png",
-      level: "Intermediate",
-      welcomeMessage: "ようこそ",
-      message:
-        "新しい言語を学ぶことが大好きです。文化を理解したり、言葉について勉強するのもとても楽しいです。これからも学び続けて成長していけるのを楽しみにしています。",
+      level: t.languages.japanese.level,
+      welcomeMessage: t.languages.japanese.welcomeMessage,
+      message: t.languages.japanese.message,
     },
     {
-      name: "Deutsch",
+      name: t.languages.german.name,
       image: "/images/germany.png",
-      level: "Intermediate",
-      welcomeMessage: "Willkommen",
-      message:
-        "Ich lerne sehr gerne neue Sprachen. Es macht mir viel Spaß, die Kultur zu verstehen und mehr über Sprachen zu erfahren. Ich freue mich darauf, weiterhin zu lernen und mich auf dieser Reise weiterzuentwickeln.",
+      level: t.languages.german.level,
+      welcomeMessage: t.languages.german.welcomeMessage,
+      message: t.languages.german.message,
     },
   ];
 
   return (
     <section>
       <Header id="about" />
-      <Section id="languages" title="Languages" jpnText="話せる言語">
+      <Section id="languages" title={t.sections.languages} jpnText="話せる言語">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {languages.map((l) => (
             <LanguageCard key={l.name} language={l} />
           ))}
         </div>
       </Section>
-      <Section id="services" title="Services" jpnText="サービス">
+      <Section id="services" title={t.sections.services} jpnText="サービス">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((s) => (
-            <ServiceCard key={s.title} service={s} />
-          ))}
+          <ServiceCard 
+            service={{
+              ...services[0],
+              title: t.services.fullstack.title,
+              description: t.services.fullstack.description,
+            }} 
+          />
+          <ServiceCard 
+            service={{
+              ...services[1],
+              title: t.services.mobile.title,
+              description: t.services.mobile.description,
+            }} 
+          />
         </div>
       </Section>
-      <Section id="experience" title="Experience" jpnText="経歴">
+      <Section id="experience" title={t.sections.experience} jpnText="経歴">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {jobs
             .slice() // make a shallow copy so the original array isn't mutated
@@ -83,12 +94,12 @@ const HomePage = () => {
 
               return bDate.getTime() - aDate.getTime(); // recent first
             })
-            .map((j) => (
-              <JobCard key={j.company} job={j} />
+            .map((j, index) => (
+              <JobCard key={index} job={j} />
             ))}
         </div>
       </Section>
-      <Section id="projects" title="Projects" jpnText="プロジェクト">
+      <Section id="projects" title={t.sections.projects} jpnText="プロジェクト">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p) => (
             <ProjectCard key={p.id} project={p} />

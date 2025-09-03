@@ -1,25 +1,28 @@
 import { FaDownload } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { useLanguage } from "~/contexts/LanguageContext";
 
 type HeaderProps = {
   id: string;
 };
 
 const Header = ({ id }: HeaderProps) => {
+  const { t } = useLanguage();
+  
   const buttons = [
     {
-      text: "Download CV",
+      text: t.header.downloadCV,
       icon: FaDownload,
       link: "/files/Desenvolvedor_FullStack.pdf",
     },
     {
-      text: "LinkedIn",
+      text: t.header.linkedin,
       icon: FaLinkedin,
       link: "https://www.linkedin.com/in/gabriel-bento-da-silva/",
     },
     {
-      text: "GitHub",
+      text: t.header.github,
       icon: FaGithub,
       link: "https://github.com/gotneb",
     },
@@ -39,23 +42,17 @@ const Header = ({ id }: HeaderProps) => {
 
         {/* Content */}
         <div className="flex-1 flex flex-col gap-4">
-          <h1 className="font-bold text-5xl">Gabriel Bento</h1>
+          <h1 className="font-bold text-5xl">{t.header.title}</h1>
           <div className="flex flex-row gap-4">
             <h2 className="py-1 px-4 rounded-full text-shadow-sm bg-gradient-to-r from-gray-100 to-gray-200 font-medium text-sm shadow-md">
-              FullStack Web
+              {t.header.fullstack}
             </h2>
             <h2 className="py-1 px-4 rounded-full text-shadow-sm bg-gradient-to-r from-gray-100 to-gray-200 font-medium text-sm shadow-md">
-              Mobile Developer
+              {t.header.mobile}
             </h2>
           </div>
           <p className="text-lg first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:leading-none first-letter:float-left">
-            This portfolio showcases my work as a frontend developer, building
-            responsive and interactive web and mobile applications. I specialize
-            in modern technologies such as React.js, Tailwind CSS, Node.js, and
-            Kotlin for Android, crafting clean interfaces and seamless user
-            experiences. From web apps to mobile solutions, it highlights my
-            skills in frontend development, modern design, and engaging user
-            interactions. design.
+            {t.header.description}
           </p>
         </div>
       </div>
