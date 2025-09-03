@@ -7,7 +7,7 @@ const Header = () => {
     {
       text: "Download CV",
       icon: FaDownload,
-      link: "",
+      link: "/files/Desenvolvedor_FullStack.pdf",
     },
     {
       text: "LinkedIn",
