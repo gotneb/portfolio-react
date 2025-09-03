@@ -62,6 +62,13 @@ const HomePage = () => {
           ))}
         </div>
       </Section>
+      <Section title="Services" jpnText="サービス">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map((s) => (
+            <ServiceCard key={s.title} service={s} />
+          ))}
+        </div>
+      </Section>
       <Section title="Experience" jpnText="経歴">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {jobs

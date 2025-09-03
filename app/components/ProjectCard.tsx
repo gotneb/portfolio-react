@@ -7,7 +7,7 @@ export type ProjectCardProps = {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <div className="group bg-surface w-full p-3 rounded-lg space-y-2 cursor-pointer border border-border">
-      <div className="w-full h-40 rounded-lg overflow-hidden">
+      <div className="w-full h-40 rounded-lg overflow-hidden shadow-sm">
         <img
           src={project.image}
           alt={project.title}

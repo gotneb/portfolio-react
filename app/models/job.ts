@@ -20,7 +20,7 @@ export const jobs: Job[] = [
     startDate: new Date("2023-01-08"),
     modality: "Hybrid",
     description: "Enhanced camera framework features like HDR, Portrait, and Night Vision using modern C++. Managed projects end-to-end, collaborated with global teams, ensured performance improvements.",
-    technologies: ["C++", "Java", "Python", "Bash"],
+    technologies: ["C/C++", "Python", "Bash"],
   },
   {
     company: "Crosoften",
@@ -31,7 +31,7 @@ export const jobs: Job[] = [
     startDate: new Date("2025-02-17"),
     modality: "Remote",
     description: "Develop Android apps with Kotlin and Jetpack Compose, implementing MVVM, building UIs, integrating APIs, and delivering high-quality projects on schedule.",
-    technologies: ["Android", "Kotlin", "Figma", "API"],
+    technologies: ["Android", "Kotlin", "API Consume"],
   },
   {
     company: "WithNoCode",
