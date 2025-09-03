@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { PiCoffee } from "react-icons/pi";
+import { IoIosMenu } from "react-icons/io";
+import { CgClose } from "react-icons/cg";
 
 const NavBar = () => {
   const [language, setLanguage] = useState<"pt" | "en">("en");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const base = "text-sm font-medium cursor-pointer hover:underline";
 
@@ -12,7 +15,7 @@ const NavBar = () => {
         <PiCoffee className="text-2xl" />
 
         {/* Desktop Navigation */}
-        <div className="flex center-items gap-6">
+        <div className="hidden md:flex center-items gap-6">
           <a href="#about" className={`${base}`}>
             About
           </a>
@@ -28,18 +31,24 @@ const NavBar = () => {
         </div>
 
         {/* Language toggle button */}
-        <button
-          onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
-          className="w-8 h-8 rounded-full overflow-hidden shadow hover:scale-105 transition cursor-pointer"
-        >
-          <img
-            src={
-              language === "pt" ? "/images/brazil.png" : "/images/usa.png"
-            }
-            alt={language === "pt" ? "Português" : "English"}
-            className="w-full h-full object-cover"
-          />
-        </button>
+        <div className="flex flex-row items-center gap-4">
+          {/* Language button */}
+          <button
+            onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
+            className="w-8 h-8 rounded-full overflow-hidden shadow hover:scale-105 transition cursor-pointer"
+          >
+            <img
+              src={language === "pt" ? "/images/brazil.png" : "/images/usa.png"}
+              alt={language === "pt" ? "Português" : "English"}
+              className="w-full h-full object-cover"
+            />
+          </button>
+
+          {/* Hamburg menu*/}
+          <button onClick={() => setMenuOpen(!menuOpen)} className="text-text-secondary p-1 bg-surface border border-border rounded-sm text-3xl cursor-pointer md:hidden">
+            {menuOpen ? <CgClose /> : <IoIosMenu />}
+          </button>
+        </div>
       </div>
     </nav>
   );

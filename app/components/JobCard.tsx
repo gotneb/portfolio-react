@@ -1,5 +1,6 @@
 import { MdOutlinePlace } from "react-icons/md";
 import { MdOutlineCalendarMonth } from "react-icons/md";
+
 import type { Job } from "~/models/job";
 
 type JobCardProps = {
