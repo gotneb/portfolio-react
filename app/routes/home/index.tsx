@@ -20,7 +20,7 @@ export function meta({}: Route.MetaArgs) {
 
 const HomePage = () => {
   const { t } = useLanguage();
-  
+
   const languages: Language[] = [
     {
       name: t.languages.portuguese.name,
@@ -64,19 +64,19 @@ const HomePage = () => {
       </Section>
       <Section id="services" title={t.sections.services} jpnText="サービス">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ServiceCard 
+          <ServiceCard
             service={{
               ...services[0],
               title: t.services.fullstack.title,
               description: t.services.fullstack.description,
-            }} 
+            }}
           />
-          <ServiceCard 
+          <ServiceCard
             service={{
               ...services[1],
               title: t.services.mobile.title,
               description: t.services.mobile.description,
-            }} 
+            }}
           />
         </div>
       </Section>

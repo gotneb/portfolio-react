@@ -29,7 +29,7 @@ const Header = ({ id }: HeaderProps) => {
   ];
 
   return (
-    <div id={id}>
+    <div id={id} className="scroll-mt-20">
       <div className="flex flex-row flex-wrap items-start gap-8">
         {/* Left Image */}
         <div className="flex-shrink-0">
