@@ -80,31 +80,31 @@ const NavBar = () => {
           
           {/* Navigation items */}
           <div className="px-6 py-8">
-            <nav className="flex flex-col space-y-6">
+            <nav className="flex flex-col ">
               <a 
                 href="#about" 
-                className="text-lg font-medium text-text-primary hover:text-indigo-500 transition-colors py-2 border-b-2 border-transparent hover:border-indigo-500"
+                className="text-lg font-medium text-text-primary hover:text-indigo-500 transition-colors py-4 border-b border-border hover:border-indigo-500"
                 onClick={() => setMenuOpen(false)}
               >
                 {t.nav.about}
               </a>
               <a 
                 href="#services" 
-                className="text-lg font-medium text-text-primary hover:text-indigo-500 transition-colors py-2 border-b-2 border-transparent hover:border-indigo-500"
+                className="text-lg font-medium text-text-primary hover:text-indigo-500 transition-colors py-4 border-b border-border hover:border-indigo-500"
                 onClick={() => setMenuOpen(false)}
               >
                 {t.nav.services}
               </a>
               <a 
                 href="#experience" 
-                className="text-lg font-medium text-text-primary hover:text-indigo-500 transition-colors py-2 border-b-2 border-transparent hover:border-indigo-500"
+                className="text-lg font-medium text-text-primary hover:text-indigo-500 transition-colors py-4 border-b border-border hover:border-indigo-500"
                 onClick={() => setMenuOpen(false)}
               >
                 {t.nav.experience}
               </a>
               <a 
                 href="#projects" 
-                className="text-lg font-medium text-text-primary hover:text-indigo-500 transition-colors py-2 border-b-2 border-transparent hover:border-indigo-500"
+                className="text-lg font-medium text-text-primary hover:text-indigo-500 transition-colors py-4 "
                 onClick={() => setMenuOpen(false)}
               >
                 {t.nav.projects}
