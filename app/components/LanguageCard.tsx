@@ -18,8 +18,8 @@ const LanguageCard = ({ language }: LanguageCardProps) => {
         {/* Header */}
         <div className="flex-1">
           <div className="flex flex-row items-center justify-between mb-2">
-            <span className="font-bold text-xl">{language.name}</span>
-            <span className="text-indigo-400 border border-indigo-400 rounded-full py-1 px-4">{language.level}</span>
+            <span className="font-bold text-2xl">{language.name}</span>
+            <span className="text-sm text-indigo-400 border border-indigo-400 rounded-full py-1 px-4">{language.level}</span>
           </div>
           <div>
             <p className="text-sm text-text-secondary group-hover:text-background">{language.welcomeMessage}</p>

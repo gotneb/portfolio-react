@@ -51,7 +51,7 @@ const Header = ({ id }: HeaderProps) => {
               {t.header.mobile}
             </h2>
           </div>
-          <p className="text-lg first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:leading-none first-letter:float-left">
+          <p className="text-lg first-letter:text-8xl first-letter:font-bold first-letter:mr-3 first-letter:leading-none first-letter:float-left">
             {t.header.description}
           </p>
         </div>
