@@ -9,7 +9,7 @@ export const pt = {
     title: "Gabriel Bento",
     fullstack: "Desenvolvedor FullStack",
     mobile: "Desenvolvedor Mobile",
-    description: "Este portfólio mostra meu trabalho como desenvolvedor frontend, construindo aplicações web e mobile responsivas e interativas. Usando tecnologias modernas como React.js, Tailwind CSS, Node.js e Kotlin para Android, criando interfaces limpas e experiências de usuário perfeitas. De aplicações web a soluções mobile, destaca minhas habilidades em desenvolvimento frontend, design moderno e interações envolventes com o usuário.",
+    description: "Desenvolvedor FullStack e Mobile especializado em React.js, Tailwind CSS, Node.js e Kotlin. Crio aplicações web e mobile responsivas com interfaces modernas e experiências de usuário excepcionais. Foco em arquitetura limpa e tecnologias atuais para soluções escaláveis.",
     downloadCV: "Baixar CV",
     linkedin: "LinkedIn",
     github: "GitHub",
