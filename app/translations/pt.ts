@@ -4,7 +4,7 @@ export const pt = {
     services: "Serviços",
     experience: "Experiência",
     projects: "Projetos",
-    contact: "Vamos conversar",
+    contact: "Contato",
   },
   header: {
     title: "Gabriel Bento",

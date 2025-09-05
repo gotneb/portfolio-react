@@ -4,7 +4,7 @@ export const en = {
     services: "Services",
     experience: "Experience",
     projects: "Projects",
-    contact: "Let's talk",
+    contact: "Contact",
   },
   header: {
     title: "Gabriel Bento",

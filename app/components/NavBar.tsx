@@ -31,7 +31,7 @@ const NavBar = () => {
             {t.nav.projects}
           </a>
           <a href="#contact" className={base}>
-            Contact
+            {t.nav.contact}
           </a>
         </div>
 
