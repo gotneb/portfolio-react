@@ -36,15 +36,15 @@ export const en = {
     },
   },
   contact: {
-    name: "Nome",
+    name: "Name",
     email: "Email",
-    subject: "Assunto",
-    message: "Mensagem",
-    send: "Enviar",
-    namePlaceholder: "Seu nome completo",
-    emailPlaceholder: "exemplo@gmail.com",
-    subjectPlaceholder: "Sobre o que gostaria de conversar?",
-    messagePlaceholder: "Oi Gabriel! Gostaria de conversar sobre...",
+    subject: "Subject",
+    message: "Message",
+    send: "Send",
+    namePlaceholder: "Your complete name",
+    emailPlaceholder: "example@gmail.com",
+    subjectPlaceholder: "I'd like to talk about...",
+    messagePlaceholder: "Hi Gabriel! I'd like to talk about...",
   },
   languages: {
     portuguese: {
