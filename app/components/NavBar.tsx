@@ -30,6 +30,9 @@ const NavBar = () => {
           <a href="#projects" className={base}>
             {t.nav.projects}
           </a>
+          <a href="#contact" className={base}>
+            Contact
+          </a>
         </div>
 
         {/* Language toggle and mobile menu */}

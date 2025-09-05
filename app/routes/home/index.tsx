@@ -10,6 +10,7 @@ import ServiceCard from "~/components/ServiceCard";
 import { jobs } from "~/models/job";
 import JobCard from "~/components/JobCard";
 import { useLanguage } from "~/contexts/LanguageContext";
+import ContactForm from "~/components/ContactForm";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -53,7 +54,7 @@ const HomePage = () => {
   ];
 
   return (
-    <section>
+    <div>
       <Header id="about" />
       <Section id="languages" title={t.sections.languages} jpnText="話せる言語">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -106,7 +107,10 @@ const HomePage = () => {
           ))}
         </div>
       </Section>
-    </section>
+      <Section id="contact" title="Let's talk" jpnText="話しましょう">
+          <ContactForm />
+      </Section>
+    </div>
   );
 };
 
