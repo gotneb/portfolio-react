@@ -1,6 +1,8 @@
+import { useLanguage } from "~/contexts/LanguageContext";
 import { IoSend } from "react-icons/io5";
 
 const ContactForm = () => {
+  const { t } = useLanguage();
   const base =
     "w-full border border-border rounded-md px-3 py-2 placeholder:text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-400 outline-none";
   const label = "block text-sm";
@@ -17,13 +19,13 @@ const ContactForm = () => {
           {/* Name */}
           <div className="space-y-2">
             <label htmlFor="name" className={`${label}`}>
-              <span>Name</span>
+              <span>{t.contact.name}</span>
               <span className="ml-1 text-red-500">*</span>
             </label>
             <input
               id="name"
               name="name"
-              placeholder="Your complete name"
+              placeholder={t.contact.namePlaceholder}
               type="text"
               className={`${base}`}
             />
@@ -32,29 +34,29 @@ const ContactForm = () => {
           {/* Email */}
           <div className="space-y-2">
             <label htmlFor="email" className={`${label}`}>
-              <span>Email</span>
+              <span>{t.contact.email}</span>
               <span className="ml-1 text-red-500">*</span>
             </label>
             <input
               id="email"
               name="email"
-              placeholder="exemplo@gmail.com"
+              placeholder={t.contact.emailPlaceholder}
               type="email"
               className={`${base}`}
             />
           </div>
         </div>
 
-        {/* Subject */}
+        {/* {t.contact.subject} */}
         <div className="space-y-2">
           <label htmlFor="subject" className={`${label}`}>
-            Subject
+            {t.contact.subject}
             <span className="ml-1 text-red-500">*</span>
           </label>
           <input
             id="subject"
             name="subject"
-            placeholder="What would like to talk?"
+            placeholder={t.contact.subjectPlaceholder}
             type="text"
             className={`${base}`}
           />
@@ -63,14 +65,14 @@ const ContactForm = () => {
         {/* Message */}
         <div className="space-y-2">
           <label htmlFor="message" className={`${label}`}>
-            <span>Message</span>
+            <span>{t.contact.message}</span>
             <span className="ml-1 text-red-500">*</span>
           </label>
           <textarea
             id="message"
             name="message"
             rows={5}
-            placeholder="Hi Gabriel! I'd like to talk about..."
+            placeholder={t.contact.messagePlaceholder}
             className={`${base}`}
           ></textarea>
         </div>
@@ -82,7 +84,7 @@ const ContactForm = () => {
           hover:scale-105 transition-transform duration-300
           "
         >
-          <span>Send</span>
+          <span>{t.contact.send}</span>
           <IoSend />
         </button>
       </form>

@@ -4,6 +4,7 @@ export const pt = {
     services: "Serviços",
     experience: "Experiência",
     projects: "Projetos",
+    contact: "Vamos conversar",
   },
   header: {
     title: "Gabriel Bento",
@@ -19,6 +20,7 @@ export const pt = {
     services: "Serviços",
     experience: "Experiência",
     projects: "Projetos",
+    contact: "Vamos conversar",
   },
   services: {
     fullstack: {
@@ -30,6 +32,18 @@ export const pt = {
       description: "Crio aplicativos mobile de alta qualidade, com experiência tanto em desenvolvimento Nativo (Android) quanto Cross-Platform (Flutter).",
     },
   },
+  contact: {
+    name: "Nome",
+    email: "Email",
+    subject: "Assunto",
+    message: "Mensagem",
+    send: "Enviar",
+    namePlaceholder: "Seu nome completo",
+    emailPlaceholder: "exemplo@gmail.com",
+    subjectPlaceholder: "Sobre o que gostaria de conversar?",
+    messagePlaceholder: "Oi Gabriel! Gostaria de conversar sobre...",
+  },
+
   languages: {
     portuguese: {
       name: "Português",
