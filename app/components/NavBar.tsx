@@ -107,10 +107,17 @@ const NavBar = () => {
               </a>
               <a 
                 href="#projects" 
-                className="text-lg font-medium text-text-primary hover:text-indigo-500 transition-colors py-4 "
+                className="text-lg font-medium text-text-primary hover:text-indigo-500 transition-colors py-4 border-b border-border hover:border-indigo-500"
                 onClick={() => setMenuOpen(false)}
               >
                 {t.nav.projects}
+              </a>
+              <a 
+                href="#contact" 
+                className="text-lg font-medium text-text-primary hover:text-indigo-500 transition-colors py-4"
+                onClick={() => setMenuOpen(false)}
+              >
+                {t.nav.contact}
               </a>
             </nav>
           </div>
