@@ -10,18 +10,46 @@ type JobCardProps = {
 
 const JobCard = ({ job }: JobCardProps) => {
   const { t, language } = useLanguage();
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "short",
+
+  // Custom date formatting function
+  const formatDate = (date: Date) => {
+    const options: Intl.DateTimeFormatOptions = {
+      year: "numeric",
+      month: "short",
+    };
+
+    if (language === "pt") {
+      // For Portuguese, use English locale but translate month names
+      const englishDate = date.toLocaleDateString("en-US", options);
+      const monthTranslations: Record<string, string> = {
+        Jan: "Jan",
+        Feb: "Fev",
+        Mar: "Mar",
+        Apr: "Abr",
+        May: "Mai",
+        Jun: "Jun",
+        Jul: "Jul",
+        Aug: "Ago",
+        Sep: "Set",
+        Oct: "Out",
+        Nov: "Nov",
+        Dec: "Dez",
+      };
+
+      const [month, year] = englishDate.split(" ");
+      return `${monthTranslations[month]} ${year}`;
+    } else {
+      // For English, use standard formatting
+      return date.toLocaleDateString("en-US", options);
+    }
   };
 
-  // Map language to locale for date formatting
-  const locale = language === "pt" ? "pt-BR" : "en-US";
-
-  const start = job.startDate.toLocaleDateString(locale, options);
+  const start = formatDate(job.startDate);
   const end = job.isActual
     ? t.jobs.present
-    : job.endDate?.toLocaleDateString(locale, options);
+    : job.endDate
+      ? formatDate(job.endDate)
+      : undefined;
 
   const jobTranslation = t.jobs[job.jobKey];
 
@@ -79,7 +107,7 @@ const JobCard = ({ job }: JobCardProps) => {
       </div>
 
       {/* Description */}
-      <p className="mb-4 text-sm text-text-secondary">
+      <p className="md:mt-4 mb-4 text-sm text-text-secondary">
         {jobTranslation.description}
       </p>
 
