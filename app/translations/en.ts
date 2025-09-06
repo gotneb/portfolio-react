@@ -77,6 +77,7 @@ export const en = {
     },
   },
   jobs: {
+    present: "Present",
     eldorado: {
       role: "Intern Engineer",
       modality: "Hybrid",

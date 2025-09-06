@@ -9,15 +9,19 @@ type JobCardProps = {
 };
 
 const JobCard = ({ job }: JobCardProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
     month: "short",
   };
-  const start = job.startDate.toLocaleDateString("en-US", options);
+
+  // Map language to locale for date formatting
+  const locale = language === "pt" ? "pt-BR" : "en-US";
+
+  const start = job.startDate.toLocaleDateString(locale, options);
   const end = job.isActual
-    ? "Present"
-    : job.endDate?.toLocaleDateString("en-US", options);
+    ? t.jobs.present
+    : job.endDate?.toLocaleDateString(locale, options);
 
   const jobTranslation = t.jobs[job.jobKey];
 
@@ -36,7 +40,7 @@ const JobCard = ({ job }: JobCardProps) => {
         </div>
 
         {/* Date and Locality*/}
-        <div>
+        <div className="hidden md:block">
           {/* Date */}
           <div className="flex flex-rows items-center mb-1">
             <MdOutlineCalendarMonth className="mr-1 text-text-secondary" />
@@ -48,13 +52,36 @@ const JobCard = ({ job }: JobCardProps) => {
           {/* Modality */}
           <div className="flex flex-rows items-center">
             <MdOutlinePlace className="mr-1 text-text-secondary" />
-            <span className="text-sm text-text-secondary">{jobTranslation.modality}</span>
+            <span className="text-sm text-text-secondary">
+              {jobTranslation.modality}
+            </span>
           </div>
         </div>
       </div>
 
+      {/* Date and Locality */}
+      <div className="my-2 block md:hidden flex flex-row items-center gap-4">
+        {/* Date */}
+        <div className="flex flex-row items-center">
+          <MdOutlineCalendarMonth className="mr-1 text-text-secondary" />
+          <span className="text-sm text-text-secondary">
+            {start} - {end}
+          </span>
+        </div>
+
+        {/* Modality */}
+        <div className="flex flex-row items-center">
+          <MdOutlinePlace className="mr-1 text-text-secondary" />
+          <span className="text-sm text-text-secondary">
+            {jobTranslation.modality}
+          </span>
+        </div>
+      </div>
+
       {/* Description */}
-      <p className="mt-4 mb-4 text-sm text-text-secondary">{jobTranslation.description}</p>
+      <p className="mb-4 text-sm text-text-secondary">
+        {jobTranslation.description}
+      </p>
 
       {/* Chips */}
       <div className="flex flex-rows gap-2">

@@ -71,6 +71,7 @@ export const pt = {
     },
   },
   jobs: {
+    present: "Atual",
     eldorado: {
       role: "Engenheiro Estagiário",
       modality: "Híbrido",
