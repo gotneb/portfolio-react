@@ -2,12 +2,14 @@ import { MdOutlinePlace } from "react-icons/md";
 import { MdOutlineCalendarMonth } from "react-icons/md";
 
 import type { Job } from "~/models/job";
+import { useLanguage } from "~/contexts/LanguageContext";
 
 type JobCardProps = {
   job: Job;
 };
 
 const JobCard = ({ job }: JobCardProps) => {
+  const { t } = useLanguage();
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
     month: "short",
@@ -16,6 +18,8 @@ const JobCard = ({ job }: JobCardProps) => {
   const end = job.isActual
     ? "Present"
     : job.endDate?.toLocaleDateString("en-US", options);
+
+  const jobTranslation = t.jobs[job.jobKey];
 
   return (
     <div className="bg-surface border border-border p-4 rounded-lg transition hover:-translate-y-2 duration-300 hover:shadow-soft hover:border-indigo-400">
@@ -27,7 +31,7 @@ const JobCard = ({ job }: JobCardProps) => {
 
         {/* Header */}
         <div className="flex-1">
-          <h3 className="font-semibold text-lg">{job.role}</h3>
+          <h3 className="font-semibold text-lg">{jobTranslation.role}</h3>
           <h4 className="text-md">{job.company}</h4>
         </div>
 
@@ -44,13 +48,13 @@ const JobCard = ({ job }: JobCardProps) => {
           {/* Modality */}
           <div className="flex flex-rows items-center">
             <MdOutlinePlace className="mr-1 text-text-secondary" />
-            <span className="text-sm text-text-secondary">{job.modality}</span>
+            <span className="text-sm text-text-secondary">{jobTranslation.modality}</span>
           </div>
         </div>
       </div>
 
       {/* Description */}
-      <p className="mt-4 mb-4 text-sm text-text-secondary">{job.description}</p>
+      <p className="mt-4 mb-4 text-sm text-text-secondary">{jobTranslation.description}</p>
 
       {/* Chips */}
       <div className="flex flex-rows gap-2">

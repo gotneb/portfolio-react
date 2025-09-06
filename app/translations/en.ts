@@ -76,4 +76,21 @@ export const en = {
         "Ich lerne sehr gerne neue Sprachen. Es macht mir viel Spaß, die Kultur zu verstehen und mehr über Sprachen zu erfahren. Ich freue mich darauf, weiterhin zu lernen und mich auf dieser Reise weiterzuentwickeln.",
     },
   },
+  jobs: {
+    eldorado: {
+      role: "Intern Engineer",
+      modality: "Hybrid",
+      description: "Enhanced camera framework features like HDR, Portrait, and Night Vision using modern C++. Managed projects end-to-end, collaborated with global teams, ensured performance improvements."
+    },
+    crosoften: {
+      role: "Android Developer", 
+      modality: "Remote",
+      description: "Develop Android apps with Kotlin and Jetpack Compose, implementing MVVM, building UIs, integrating APIs, and delivering high-quality projects on schedule."
+    },
+    withnocode: {
+      role: "Software Developer",
+      modality: "Remote", 
+      description: "Maintained and optimized a web app built with WeWeb and Flutterflow. Collaborated with the U.S. client team, resolved bugs, and improved performance using Stripe and GCP."
+    }
+  },
 };

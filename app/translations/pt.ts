@@ -70,4 +70,21 @@ export const pt = {
       message: "Ich lerne sehr gerne neue Sprachen. Es macht mir viel Spaß, die Kultur zu verstehen und mehr über Sprachen zu erfahren. Ich freue mich darauf, weiterhin zu lernen und mich auf dieser Reise weiterzuentwickeln.",
     },
   },
+  jobs: {
+    eldorado: {
+      role: "Engenheiro Estagiário",
+      modality: "Híbrido",
+      description: "Aprimorei recursos do framework de câmera como HDR, Retrato e Visão Noturna usando C++ moderno. Gerenciei projetos do início ao fim, colaborei com equipes globais, assegurei melhorias de performance."
+    },
+    crosoften: {
+      role: "Desenvolvedor Android",
+      modality: "Remoto",
+      description: "Desenvolvo aplicativos Android com Kotlin e Jetpack Compose, implementando MVVM, construindo UIs, integrando APIs e entregando projetos de alta qualidade no prazo."
+    },
+    withnocode: {
+      role: "Desenvolvedor de Software",
+      modality: "Remoto",
+      description: "Mantive e otimizei uma aplicação web construída com WeWeb e Flutterflow. Colaborei com a equipe cliente dos EUA, resolvi bugs e melhorei a performance usando Stripe e GCP."
+    }
+  },
 }; 
