@@ -107,7 +107,7 @@ const HomePage = () => {
           ))}
         </div>
       </Section>
-      <Section id="contact" title={t.sections.contact} jpnText="話しましょう">
+      <Section id="contact" title={t.sections.contact} jpnText="話す">
           <ContactForm />
       </Section>
     </div>
