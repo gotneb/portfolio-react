@@ -34,7 +34,7 @@ const Header = ({ id }: HeaderProps) => {
         {/* Left Image */}
         <div className="flex-shrink-0">
           <img
-            src="/images/fern.jpg"
+            src="/images/profile.jpeg"
             alt="Profile picture"
             className="w-64 h-64 object-cover rounded-2xl shadow-2xl"
           />
