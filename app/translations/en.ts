@@ -146,6 +146,14 @@ export const en = {
     "advocacia-site": {
       title: "Advocacia Site",
       description: "A clean, professional landing page for a lawyer, featuring intuitive navigation and a prominent contact form."
+    },
+    "crypto-dash": {
+      title: "Crypto Dashboard",
+      description: "A modern React-based cryptocurrency dashboard showing live prices, charts, and market metrics with a sleek, responsive design.",
+    },
+    "react-ecommerce": {
+      title: "React E-Commerce UI",
+      description: "A modern, responsive e-commerce interface built with React and TailwindCSS, featuring dynamic cart functionality, state management with useContext, and a mock local server for CRUD operations.",
     }
   },
 };
