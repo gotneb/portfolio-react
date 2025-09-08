@@ -1,16 +1,21 @@
 import type { Project } from "~/models/project";
+import { useLanguage } from "~/contexts/LanguageContext";
 
 export type ProjectCardProps = {
   project: Project;
 };
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
+  const { t } = useLanguage();
+  
+  const projectTranslation = t.projects[project.projectKey as keyof typeof t.projects];
+
   return (
     <div className="group bg-surface w-full p-3 rounded-lg space-y-2 cursor-pointer border border-border">
       <div className="w-full h-40 rounded-lg overflow-hidden shadow-sm">
         <img
           src={project.image}
-          alt={project.title}
+          alt={projectTranslation.title}
           className="w-full h-full object-cover transform transition duration-300 group-hover:scale-105"
         />
       </div>
@@ -24,11 +29,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </h4>
         ))}
       </div>
-      <h2 className="font-semibold text-lg">{project.title}</h2>
-      <p className="mb-4 text-text-secondary text-sm">{project.description}</p>
+      <h2 className="font-semibold text-lg">{projectTranslation.title}</h2>
+      <p className="mb-4 text-text-secondary text-sm">{projectTranslation.description}</p>
     </div>
   );
 };
-
 
 export default ProjectCard;
