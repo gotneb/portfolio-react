@@ -27,12 +27,4 @@ export const jobs: Job[] = [
     startDate: new Date("2025-02-17"),
     technologies: ["Android", "Kotlin", "API Consume"],
   },
-  {
-    company: "WithNoCode",
-    jobKey: "withnocode",
-    logo: "/images/jobs/withnocode.png",
-    isActual: true,
-    startDate: new Date("2025-07-02"),
-    technologies: ["Flutterflow", "WeWeb"],
-  },
 ];
