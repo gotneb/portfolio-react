@@ -14,7 +14,7 @@ const Header = ({ id }: HeaderProps) => {
     {
       text: t.header.downloadCV,
       icon: FaDownload,
-      link: "/files/Desenvolvedor_FullStack.pdf",
+      link: "/files/FullStack Developer.pdf",
     },
     {
       text: t.header.linkedin,
