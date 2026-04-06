@@ -171,9 +171,8 @@ export default function Contact() {
                 href={href}
                 onClick={(e) => e.preventDefault()}
                 aria-label={label}
-                className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="card-bg w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
                 style={{
-                  background: "var(--bg-overlay)",
                   border: "1px solid var(--border-color)",
                   color: "var(--text-secondary)",
                 }}

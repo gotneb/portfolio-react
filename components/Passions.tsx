@@ -76,9 +76,8 @@ export default function Passions() {
         {/* Carousel */}
         <div className="max-w-5xl mx-auto fade-in-section">
           <div
-            className="rounded-2xl overflow-hidden"
+            className="card-bg rounded-2xl overflow-hidden"
             style={{
-              background: "var(--bg-overlay)",
               border: "1px solid var(--border-color)",
               boxShadow: "var(--shadow-lg)",
             }}

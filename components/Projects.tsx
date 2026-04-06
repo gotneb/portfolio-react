@@ -109,9 +109,8 @@ export default function Projects() {
           {filtered.map((project) => (
             <div
               key={project.id}
-              className="card-hover rounded-xl overflow-hidden flex flex-col"
+              className="card-hover card-bg rounded-xl overflow-hidden flex flex-col"
               style={{
-                background: "var(--bg-overlay)",
                 border: "1px solid var(--border-color)",
                 boxShadow: "var(--shadow-sm)",
               }}

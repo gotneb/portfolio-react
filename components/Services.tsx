@@ -44,9 +44,8 @@ export default function Services() {
             return (
               <div
                 key={item.title}
-                className="card-hover rounded-xl p-8 flex flex-col gap-4"
+                className="card-hover card-bg rounded-xl p-8 flex flex-col gap-4"
                 style={{
-                  background: "var(--bg-overlay)",
                   border: "1px solid var(--border-color)",
                   boxShadow: "var(--shadow-sm)",
                 }}

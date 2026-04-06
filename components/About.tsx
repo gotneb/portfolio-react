@@ -75,9 +75,8 @@ export default function About() {
               {t.about.languages.map((lang) => (
                 <div
                   key={lang.name}
-                  className="card-hover flex items-center gap-2 px-4 py-2 rounded-full cursor-default"
+                  className="card-hover card-bg flex items-center gap-2 px-4 py-2 rounded-full cursor-default"
                   style={{
-                    background: "var(--bg-overlay)",
                     border: "1px solid var(--border-color)",
                     boxShadow: "var(--shadow-sm)",
                   }}

@@ -34,11 +34,11 @@ export default function Experience() {
         </div>
 
         {/* Timeline */}
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto fade-in-section">
           {t.experience.items.map((item, index) => (
             <div
               key={item.company}
-              className="relative flex gap-6 pb-12 last:pb-0 fade-in-section"
+              className="relative flex gap-6 pb-12 last:pb-0"
             >
               {/* Left: dot + line */}
               <div className="flex flex-col items-center">
@@ -53,9 +53,8 @@ export default function Experience() {
 
               {/* Right: Content */}
               <div
-                className="flex-1 rounded-xl p-6"
+                className="card-hover card-bg flex-1 rounded-xl p-6"
                 style={{
-                  background: "var(--bg-overlay)",
                   border: "1px solid var(--border-color)",
                   boxShadow: "var(--shadow-sm)",
                 }}
