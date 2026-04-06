@@ -1,0 +1,371 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CSS VARIABLES — DARK MODE (default)
+   ============================================================ */
+:root,
+.dark {
+  --bg-primary: #080c14;
+  --bg-secondary: #0d1117;
+  --bg-tertiary: #111827;
+  --bg-overlay: #0f1525;
+  --bg-card: #0f1525;
+  --text-primary: #e8e6d9;
+  --text-secondary: #a09880;
+  --text-muted: #6b7280;
+  --accent-primary: #e8364a;
+  --accent-secondary: #c9a84c;
+  --accent-jade: #4ecdc4;
+  --border-color: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.15);
+  --nav-bg: rgba(8, 12, 20, 0.85);
+  --nav-border: rgba(255, 255, 255, 0.08);
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --code-bg: #1a1f2e;
+  --code-text: #e8364a;
+  --glow-gold: 0 0 20px rgba(201, 168, 76, 0.3);
+  --glow-red: 0 0 20px rgba(232, 54, 74, 0.3);
+}
+
+/* ============================================================
+   CSS VARIABLES — LIGHT MODE
+   ============================================================ */
+.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
+  --bg-tertiary: #f0f0f0;
+  --bg-overlay: #efefef;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --accent-primary: #e8364a;
+  --accent-secondary: #c9a84c;
+  --accent-jade: #4ecdc4;
+  --border-color: #e2e2e2;
+  --border-strong: #cccccc;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-border: #e5e5e5;
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.10);
+  --code-bg: #f4f4f5;
+  --code-text: #c0392b;
+  --glow-gold: 0 0 20px rgba(201, 168, 76, 0.15);
+  --glow-red: 0 0 20px rgba(232, 54, 74, 0.15);
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.font-display {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.font-cjk {
+  font-family: "Noto Sans SC", "Noto Sans", sans-serif;
+}
+
+/* Section title style */
+.section-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+/* Small caps style for section labels */
+.small-caps {
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  font-size: 0.8em;
+}
+
+/* ============================================================
+   STARFIELD
+   ============================================================ */
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  animation: twinkle var(--duration, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: var(--min-opacity, 0.2); transform: scale(1); }
+  50% { opacity: var(--max-opacity, 0.8); transform: scale(1.2); }
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-secondary);
+  border-radius: 3px;
+}
+
+/* ============================================================
+   SCROLL FADE IN ANIMATION
+   ============================================================ */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   NAV LINK HOVER UNDERLINE
+   ============================================================ */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-secondary);
+  border-radius: 1px;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--accent-secondary);
+}
+
+/* ============================================================
+   CARD HOVER
+   ============================================================ */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--accent-secondary);
+}
+
+/* ============================================================
+   GRADIENT TEXT
+   ============================================================ */
+.text-gradient-gold-red {
+  background: linear-gradient(135deg, #c9a84c 0%, #e8364a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-jade {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a39b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   PORTRAIT GLOW
+   ============================================================ */
+.portrait-glow {
+  box-shadow: 0 0 0 3px var(--accent-secondary),
+              0 0 40px rgba(201, 168, 76, 0.4),
+              0 0 80px rgba(201, 168, 76, 0.15);
+}
+
+/* ============================================================
+   BUTTON BASE
+   ============================================================ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--accent-primary);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #c92d3f;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(232, 54, 74, 0.35);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--border-color);
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   SECTION
+   ============================================================ */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================================
+   TECH TAG
+   ============================================================ */
+.tech-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   TIMELINE DOT
+   ============================================================ */
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-secondary);
+  box-shadow: 0 0 8px rgba(201, 168, 76, 0.5);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   CAROUSEL DOT
+   ============================================================ */
+.carousel-dot {
+  height: 6px;
+  border-radius: 3px;
+  transition: width 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  width: 24px;
+  background: var(--accent-secondary);
+}
+
+.carousel-dot.inactive {
+  width: 6px;
+  background: var(--border-strong);
+}
+
+/* ============================================================
+   FORM INPUTS
+   ============================================================ */
+.form-input {
+  width: 100%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.875rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-input:focus {
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+}
+
+/* ============================================================
+   LIGHT MODE ADJUSTMENTS
+   ============================================================ */
+.light .star {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.light .portrait-glow {
+  box-shadow: 0 0 0 3px var(--accent-secondary),
+              0 0 40px rgba(201, 168, 76, 0.2),
+              0 0 80px rgba(201, 168, 76, 0.08);
+}
